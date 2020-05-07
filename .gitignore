@@ -1,0 +1,13 @@
+/node_modules
+package-lock.json
+.env
+
+# Coverage directory
+coverage/
+
+# nyc directory
+.nyc_output
+
+/dist
+
+.DS_Store
