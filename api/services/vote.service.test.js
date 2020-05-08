@@ -76,7 +76,7 @@ describe('VoteService', () => {
 
     it('should get a vote', async () => {
 
-      const firstVote = seededVotes[0]
+      const firstVote = await seededVotes[0]
 
       const voteService = new VoteService();
 
@@ -94,7 +94,7 @@ describe('VoteService', () => {
 
       try {
 
-        const firstvote = seededVotes[0]
+        const firstvote = await seededVotes[0]
 
 
         const voteService = new VoteService();

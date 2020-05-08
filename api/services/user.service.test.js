@@ -30,9 +30,11 @@ describe('UserService', () => {
 
     it('should not create a new user if record already exists', async () => {
 
+      let seeded = await seededUsers[0]
+
       let user = {
         username: 'frankdonga',
-        email: seededUsers[0].email,
+        email: seeded.email,
         password: 'password',
       }
       const userService = new UserService();
@@ -81,8 +83,10 @@ describe('UserService', () => {
 
     it('should get a user', async () => {
 
+      const seeded = await seededUsers[0]
+
       const userService = new UserService();
-      const user = await userService.getUser(seededUsers[0]._id);
+      const user = await userService.getUser(seeded._id);
 
       expect(user._id).toBeDefined();
       expect(user.username).toBeDefined();

@@ -53,6 +53,26 @@ describe('AnswerService', () => {
       expect(answer.body).toEqual(stubValue.body);
       expect(answer.user).toEqual(stubValue.user);
     });
+
+
+    it('should not create answer if error occurs', async () => {
+
+      try {
+
+        const stubValue = {
+          body: '', //we omitted the body
+          question: new ObjectID('5e6d169de43d8272913a7d99'),
+          user: new ObjectID('5e6d1745e43d8272913a7d9d'),
+        };
+
+        const answerService = new AnswerService();
+
+        await answerService.createAnswer(stubValue);
+
+      } catch (e) {
+        expect(e.message).toBeDefined();
+      }
+    });
   });
 
 
@@ -62,7 +82,7 @@ describe('AnswerService', () => {
 
       try {
 
-        let answerObjID = new ObjectID('5e682d0d580b5a6fb795b842')
+        let answerObjID = new ObjectID('5e682d0d580b5a6fb795b842') //random id
 
         const answerService = new AnswerService();
 

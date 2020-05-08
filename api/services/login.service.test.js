@@ -51,7 +51,7 @@ describe('LoginService', () => {
 
     it('should not login a user if password does not match with hash', async () => {
 
-      const email = seededUsers[0].email
+      const email = await seededUsers[0].email
       const pass = 'non-password' //this password will not match
 
       //we need to mock external dependencies to achieve unit test
@@ -67,7 +67,7 @@ describe('LoginService', () => {
 
     it('should login a user successfully', async () => {
 
-      const email = seededUsers[0].email
+      const email = await seededUsers[0].email
       const pass = "password"
 
       let stubToken = "jkndndfnskdjnfskjdnfjksdnf"

@@ -42,7 +42,7 @@ describe('QuestionService', () => {
 
       try {
 
-        const firstQuestion = seededQuestions[0]
+        const firstQuestion = await seededQuestions[0]
   
         const record = {
           title: firstQuestion.title, 
@@ -97,7 +97,7 @@ describe('QuestionService', () => {
 
     it('should get a question', async () => {
 
-      const firstQuestion = seededQuestions[0]
+      const firstQuestion = await seededQuestions[0]
 
       const questionService = new QuestionService();
       const question = await questionService.getQuestion(firstQuestion._id);
@@ -128,8 +128,8 @@ describe('QuestionService', () => {
 
       try {
 
-        const firstQuestion = seededQuestions[0]
-        const secondQuestion = seededQuestions[1]
+        const firstQuestion = await seededQuestions[0]
+        const secondQuestion = await seededQuestions[1]
 
         const update = {
           _id: firstQuestion._id,
@@ -147,7 +147,7 @@ describe('QuestionService', () => {
 
     it('should update a question successfully', async () => {
 
-      const firstQuestion = seededQuestions[0]
+      const firstQuestion = await seededQuestions[0]
 
       const update = {
         _id: firstQuestion._id,
