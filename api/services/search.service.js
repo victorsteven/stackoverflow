@@ -16,8 +16,7 @@ class SearchService {
 
     try {
       //a wildcard might get more than one question
-      const users = await this.user.find({'username': { $regex: '.*' + term, $options:'i'  + '.*' }})
-                                    .select('-__v')
+      const users = await this.user.find({'username': { $regex: '.*' + term, $options:'i'  + '.*' }}, 'username')
                                     .exec()
 
       return users

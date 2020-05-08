@@ -73,6 +73,21 @@ describe('AnswerService', () => {
         expect(e.message).toBeDefined();
       }
     });
+    
+    it('should not create an if the user have answer same thing before', async () => {
+
+      let seeded = await seededAnswers[0]
+
+      const ans = {
+        body: seeded.body, 
+        question: new ObjectID('5e6d169de43d8272913a7d99'),
+        user: new ObjectID('5e6d1745e43d8272913a7d9d'),
+      };
+
+      const answerService = new AnswerService();
+
+      await expect(answerService.createAnswer(ans)).rejects.toThrow('record already exists'); 
+    });
   });
 
 
@@ -95,7 +110,7 @@ describe('AnswerService', () => {
 
     it('should get an answer', async () => {
 
-      const firstAnswer = seededAnswers[0]
+      const firstAnswer = await seededAnswers[0]
 
       const answerService = new AnswerService();
 
@@ -113,7 +128,7 @@ describe('AnswerService', () => {
 
       try {
 
-        const firstAnswer = seededAnswers[0]
+        const firstAnswer = await seededAnswers[0]
 
         const stubValue = {
           _id:  firstAnswer._id,
@@ -137,7 +152,7 @@ describe('AnswerService', () => {
 
     it('should get answers', async () => {
 
-      const quesId = seededAnswers[0].question
+      const quesId = await seededAnswers[0].question
 
       const answerService = new AnswerService();
       const answers = await answerService.getAnswers(quesId); //answers coming from our in-memory db

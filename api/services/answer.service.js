@@ -12,6 +12,12 @@ class AnswerService {
 
     try {
 
+      //if the answer already exists, disallow answering again
+      const record = await this.answer.findOne({ body: answer.body })
+      if (record) {
+        throw new Error('record already exists');
+      }
+
       const createdAnswer = await this.answer.create(answer);
 
       return createdAnswer
