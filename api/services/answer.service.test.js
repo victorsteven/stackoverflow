@@ -125,33 +125,5 @@ describe('AnswerService', () => {
       expect(answers.length).toEqual(2);
 
     });
-
-    //We will need to fake a db error, so as to cover the catch block
-    // it('should not get answers if db error occurs', async () => {
-    //   try {
-    //     var mockFind = {
-    //       select() {
-    //         return this;
-    //       },
-    //       populate(){
-    //         return this;
-    //       },
-    //       exec() {
-    //         return Promise.reject('database error');
-    //       }
-    //     };
-
-    //     const answersStub = jest.spyOn(answer, 'find').mockReturnValue(mockFind);
-
-    //     const answerService = new AnswerService();
-
-    //     await answerService.getAnswers()
-
-    //     expect(answersStub).toHaveBeenCalled();
-
-    //   } catch (e) {
-    //     expect(e).toMatch('database error');
-    //   }
-    // })
   });
 });
