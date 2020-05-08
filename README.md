@@ -1,4 +1,7 @@
-Heroku API: https://stackoverflow-mimic.herokuapp.com
+
+[![Build Status](https://travis-ci.org/victorsteven/stackoverflow.svg?branch=master)](https://travis-ci.org/victorsteven/stackoverflow)  [![Coverage Status](https://coveralls.io/repos/github/victorsteven/stackoverflow/badge.svg?branch=master)](https://coveralls.io/github/victorsteven/stackoverflow?branch=master)
+
+Heroku API: https://stackoverflow-work.herokuapp.com
 
 ### Clone the application 
 
