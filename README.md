@@ -3,7 +3,7 @@
 
 Heroku API: https://stackoverflow-work.herokuapp.com
 
-### Clone the application 
+#### Clone the application 
 
 Using SSH:
 ```
@@ -15,7 +15,7 @@ git clone https://github.com/victorsteven/stackoverflow.git
 cd stackoverflow
 ```
 
-### Install Dependencies
+#### Install Dependencies
 ```
 npm install
 ```
@@ -25,20 +25,20 @@ npm install
 cd stackoverflow/api/docs
 ```
 
-### Add JWT Secret
+#### Add JWT Secret
 Create a **.env** from the root directory
 ```
 touch .env
 ```
 Simply copy the content of **.env.example** file, you can change the value of the **JWT_SECRET**
 
-### Run the Application
+#### Run the Application
 
 ```
 npm run dev
 ```
 
-### Run Tests Suite
+#### Run Tests Suite
 
 ```
 npm test
