@@ -24,6 +24,8 @@ npm install
 ```
 cd stackoverflow/api/docs
 ```
+or:
+https://documenter.getpostman.com/view/4595252/SzmfXGpX
 
 #### Add JWT Secret
 Create a **.env** from the root directory
