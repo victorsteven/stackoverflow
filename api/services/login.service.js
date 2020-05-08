@@ -26,7 +26,7 @@ class LoginService {
           _id: user._id.toHexString(),
         }
 
-       const token = jwt.sign(userCred, process.env.JWT_SECRET).toString();
+       const token = jwt.sign(userCred, process.env.JWT_SECRET, { expiresIn: '15m' }).toString();
 
         return token;
       } else {
