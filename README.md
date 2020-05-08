@@ -14,9 +14,15 @@ git clone https://github.com/victorsteven/stackoverflow.git
 ```
 cd stackoverflow
 ```
+
 ### Install Dependencies
 ```
 npm install
+```
+
+#### API Documentation:
+```
+cd stackoverflow/api/docs
 ```
 
 ### Add JWT Secret
