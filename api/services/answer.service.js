@@ -30,7 +30,7 @@ class AnswerService {
 
       const gottenAnswer = await this.answer.findOne({ _id: answerIdObj })
                                           .select('-__v')
-                                          .populate('question', '_id body')
+                                          .populate('question', '_id title body')
                                           .exec()
       if (!gottenAnswer) {
         throw new Error('no record found');
@@ -76,7 +76,7 @@ class AnswerService {
       const gottenAnswers = await this.answer.find({ question: questionIdObj })
                                                 .select('-user')
                                                 .select('-__v')
-                                                .populate('question', '_id body')
+                                                .populate('question', '_id title body')
                                                 .exec()
 
       return gottenAnswers
