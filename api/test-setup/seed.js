@@ -1,6 +1,7 @@
 import User from '../models/user'
 import Question from '../models/question'
 import Answer from '../models/answer'
+import Vote from '../models/vote'
 import password from '../utils/password'
 
 
@@ -65,7 +66,7 @@ export async function seedAnswers () {
 }
 
 
-export async function seedQuestionsndAnswers () {
+export async function seedQuestionsAndAnswers () {
 
   const question1 = {
     title: 'How to use Hexagonal Architecture',
@@ -101,7 +102,6 @@ export async function seedQuestionsndAnswers () {
 
       const gottenAnswers = await Answer.find()
                                           .select('-__v')
-                                          // .populate('user', '_id username')
                                           .populate('question', '_id title body')
                                           .exec()
 
@@ -109,6 +109,55 @@ export async function seedQuestionsndAnswers () {
       if(gottenAnswers) {
 
         return gottenAnswers
+      }
+    }
+  }
+}
+
+
+export async function seedQuestionsAndVotes () {
+
+  const question1 = {
+    title: 'How to use Hexagonal Architecture',
+    body: 'first question body',
+    user: new ObjectID('5eb4554d1c6d02391f6ba37c')
+  }
+  const seededQuestion1 = await Question.create(question1)
+
+  const question2 = {
+    title: 'How to convert float64 to string in Golang',
+    body: 'second question body',
+    user: new ObjectID('5eb455993b9e97398e8aad39')
+  }
+
+  const seededQuestion2 = await Question.create(question2)
+
+  if(seededQuestion1 && seededQuestion2) {
+
+    let votes = [{
+        kind: 'upvote',
+        question: seededQuestion1._id,
+        user: new ObjectID('5eb455993b9e97398e8aad39'),
+      },{
+        kind: 'downvote',
+        question: seededQuestion2._id,
+        user: new ObjectID('5eb455993b9e97398e8aad39'),
+      },
+    ]
+
+    const seededVotes = await Vote.insertMany(votes)
+
+    if(seededVotes) {
+
+      const gottenVotes = await Vote.find()
+                                    .select('-__v')
+                                    .populate('question', '_id title body')
+                                    .exec()
+
+
+      if(gottenVotes) {
+
+        return gottenVotes
       }
     }
   }

@@ -171,7 +171,7 @@ describe('AnswerController', () => {
 
       const stubUser = {
         _id: new ObjectID(),
-        name: faker.name.findName(),
+        username: faker.name.findName(),
       }
 
       const gottenQuestion = {

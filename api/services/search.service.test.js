@@ -1,5 +1,5 @@
 import SearchService from './search.service'
-import { seedUsers, seedQuestionsndAnswers } from '../test-setup/seed'
+import { seedUsers, seedQuestionsAndAnswers } from '../test-setup/seed'
 import  { connect, clearDatabase, closeDatabase  }  from '../test-setup/db-config'
 
 
@@ -8,11 +8,6 @@ import  { connect, clearDatabase, closeDatabase  }  from '../test-setup/db-confi
  */
 beforeAll(async () => {
   await connect();
-});
-
-beforeEach(async () => {
-  await seedUsers()
-  await seedQuestionsndAnswers()
 });
 
 /**
@@ -31,6 +26,10 @@ afterAll(async () => {
 
 
 describe('SearchUserService', () => {
+
+  beforeEach(async () => {
+    await seedUsers()
+  });
 
   describe('searchUser', () => {
 
@@ -65,6 +64,10 @@ describe('SearchUserService', () => {
 
 describe('SearchQuestionService', () => {
 
+  beforeEach(async () => {
+    await seedQuestionsAndAnswers()
+  });
+
   describe('searchQuestion', () => {
 
     it('should return empty if search result is not found', async () => {
@@ -96,6 +99,10 @@ describe('SearchQuestionService', () => {
 
 
 describe('SearchAnswerService', () => {
+
+  beforeEach(async () => {
+    await seedQuestionsAndAnswers()
+  });
 
   describe('searchAnswer', () => {
 

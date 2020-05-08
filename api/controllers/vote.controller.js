@@ -19,13 +19,12 @@ class VoteController {
     if(!tokenMetadata) {
       return res.status(401).json({
         status: 401,
-        error: "unauthorized here",
+        error: "unauthorized",
       });
     }
 
     //check the request param
     const { quesId } = req.params 
-    console.log("the passed id: ", quesId)
     if(!ObjectID.isValid(quesId)){
       return res.status(400).json({
         status: 400,
@@ -51,9 +50,10 @@ class VoteController {
 
       //get the vote if exists:
       const formerVote = await this.voteService.getVote(user._id, ques._id)
+
       if (formerVote && formerVote.kind === 'upvote') {
-        return res.status(400).json({
-          status: 400,
+        return res.status(500).json({
+          status: 500,
           error: "cannot upvote multiple times"
         })
       } else if(formerVote && formerVote.kind === 'downvote') {
@@ -121,8 +121,8 @@ class VoteController {
       //get the vote if exists:
       const formerVote = await this.voteService.getVote(user._id, ques._id)
       if (formerVote && formerVote.kind === 'downvote') {
-        return res.status(400).json({
-          status: 400,
+        return res.status(500).json({
+          status: 500,
           error: "cannot downvote multiple times"
         })
       } else if(formerVote && formerVote.kind === 'upvote') {
