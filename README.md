@@ -1,15 +1,15 @@
-Heroku API: https://premier-league-fx.herokuapp.com
+Heroku API: https://stackoverflow-mimic.herokuapp.com
 
 ### Clone the application 
 
 Using SSH:
 ```
-git clone https://github.com/victorsteven/Premier-League.git
+git clone https://github.com/victorsteven/stackoverflow.git
 ```
 
 #### Change to the application directory:
 ```
-cd Premier-League
+cd stackoverflow
 ```
 ### Install Dependencies
 ```
