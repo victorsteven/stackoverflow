@@ -1,0 +1,477 @@
+{
+	"info": {
+		"_postman_id": "41dd8df2-1604-4da6-a439-391c76d701ac",
+		"name": "Stackoverflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a Question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI1NWI0MjVjOWQwYjAwMmZiOWY1ZmUiLCJpYXQiOjE1ODg5NDM3NDQsImV4cCI6MTU4ODk0NDY0NH0.Z8YewUa8wLjYLPOA1RiKhB8pEQjrSS7VEmJ74LCL7tM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Using Concurrency in Golang\",\n\t\"body\": \"It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/questions",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/questions"
+			},
+			"response": []
+		},
+		{
+			"name": "Create an Answer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI1NWI0MjVjOWQwYjAwMmZiOWY1ZmUiLCJpYXQiOjE1ODg5NDcyMTksImV4cCI6MTU4ODk0ODExOX0.ZupdZVqwJJNLbZUWI35yNh18pOygGUB9QgHeNanyd4A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"body\": \"This is the third answer about using concurrency in golang.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/answers/5eb55c065c9d0b002fb9f602",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"answers",
+						"5eb55c065c9d0b002fb9f602"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/answers/${questionId}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Answers for a Question",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/all/answers/5eb55c065c9d0b002fb9f602",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"all",
+						"answers",
+						"5eb55c065c9d0b002fb9f602"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/all/answers/${questionId}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/questions",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"questions"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/questions"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"abdul\",\n\t\"email\": \"abdul@gmail.com\",\n\t\"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/users",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"mike@gmail.com\",\n\t\"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/login",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Upvote a Question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI1NWI0MjVjOWQwYjAwMmZiOWY1ZmUiLCJpYXQiOjE1ODg5NDM3NDQsImV4cCI6MTU4ODk0NDY0NH0.Z8YewUa8wLjYLPOA1RiKhB8pEQjrSS7VEmJ74LCL7tM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/votes/upvote/5eb55c065c9d0b002fb9f602",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"votes",
+						"upvote",
+						"5eb55c065c9d0b002fb9f602"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/votes/upvote/${questionId}"
+			},
+			"response": []
+		},
+		{
+			"name": "Downvote a Question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI1NWM2YzVjOWQwYjAwMmZiOWY2MDMiLCJpYXQiOjE1ODg5NDQwMDEsImV4cCI6MTU4ODk0NDkwMX0.mRej6nsvcQory6LOCJeN2kvU2HQ0tXURQfbnzoOcW54",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/votes/downvote/5eb55c065c9d0b002fb9f602",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"votes",
+						"downvote",
+						"5eb55c065c9d0b002fb9f602"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/votes/downvote/${questionId}"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/search/user?term=mike",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"search",
+						"user"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "mike"
+						}
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/search/user?term=${search_term}"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Questions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/search/question?term=How to Dockerize a NodeJS API",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"search",
+						"question"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "How to Dockerize a NodeJS API"
+						}
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/search/question?term=${search_term}"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Answers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/search/answer?term=This is the ans",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"search",
+						"answer"
+					],
+					"query": [
+						{
+							"key": "term",
+							"value": "This is the ans"
+						}
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/search/answer?term=${search_term}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get An Answer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/answers/5eb560d1da5386002fdcc2ae",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"answers",
+						"5eb560d1da5386002fdcc2ae"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/answers/${answerId}"
+			},
+			"response": []
+		},
+		{
+			"name": "Update An Answer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI1NWM2YzVjOWQwYjAwMmZiOWY2MDMiLCJpYXQiOjE1ODg5NDc1NDgsImV4cCI6MTU4ODk0ODQ0OH0.sdBnhT0nWoAlcssVjq4mKlezDN7zejDk0NjmYut7Vp0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"body\": \"This is the updated third answer about using concurrency in golang.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/answers/5eb560d1da5386002fdcc2ae",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"answers",
+						"5eb560d1da5386002fdcc2ae"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/answers/${answerId}"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI1NWI0MjVjOWQwYjAwMmZiOWY1ZmUiLCJpYXQiOjE1ODg5NDc2ODAsImV4cCI6MTU4ODk0ODU4MH0.LOgs1ah2JP2-d_SVbF-CsitAY6LWPx1mtCyOIMUdK-U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Using Goroutines and Concurrency in Golang\",\n\t\"body\": \"It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://stackoverflow-work.herokuapp.com/api/v1/questions/5eb55c065c9d0b002fb9f602",
+					"protocol": "https",
+					"host": [
+						"stackoverflow-work",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"questions",
+						"5eb55c065c9d0b002fb9f602"
+					]
+				},
+				"description": "https://stackoverflow-work.herokuapp.com/api/v1/questions/${questionId}"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
